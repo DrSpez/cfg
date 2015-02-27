@@ -1,11 +1,14 @@
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set softtabstop=4
-set autoindent
-set number
+"PEP-8 indentation   
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal textwidth=80
+setlocal smarttab
+setlocal expandtab
+syntax on
+filetype indent plugin on
 
+set number
 set mouse=a
 set t_Co=256
 colorscheme jellybeans
@@ -14,6 +17,9 @@ execute pathogen#infect()
 
 set clipboard=unnamedplus
 set nocompatible 
+
+" Run Python with F5
+nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 
 " Swap lines
 nnoremap <c-j> :m .+1<CR>==
@@ -55,5 +61,5 @@ autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-echo "MY VIMRC LOADED"
+echo "My .vimrc loaded"
 
