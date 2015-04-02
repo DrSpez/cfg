@@ -32,6 +32,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,8 +50,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line   
-"
-"
 
 "PEP-8 indentation   
 setlocal softtabstop=4
@@ -71,6 +70,12 @@ set clipboard=unnamedplus
 
 " Run Python with F5
 nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>s :set list!<CR>
+
+" " Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬'
 
 " Map ; to :
 map ; :
@@ -114,6 +119,8 @@ map  N <Plug>(easymotion-prev) "
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Hide undesired files
+let NERDTreeIgnore = ['\.pyc$']
 
 echo "My .vimrc loaded"
 
