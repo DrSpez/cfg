@@ -51,6 +51,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line   
 
+
 "PEP-8 indentation   
 setlocal softtabstop=4
 setlocal textwidth=80
@@ -74,8 +75,11 @@ nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>s :set list!<CR>
 
-" " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬'
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+" Invisible character colors 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 " Map ; to :
 map ; :
