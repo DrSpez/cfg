@@ -34,8 +34,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'davidhalter/jedi-vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -49,6 +48,9 @@ filetype plugin indent on    " required
 " auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 " Put your non-Plugin stuff after this line   
 
 
@@ -64,7 +66,7 @@ filetype indent plugin on
 set number
 set mouse=a
 set t_Co=256
-colorscheme jellybeans
+colorscheme wombat256mod
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -76,7 +78,8 @@ nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 nmap <leader>s :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
+"
 " Invisible character colors 
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -123,6 +126,8 @@ map  N <Plug>(easymotion-prev) "
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Fix tree '~V' bug
+let g:NERDTreeDirArrows=0 
 " Hide undesired files
 let NERDTreeIgnore = ['\.pyc$']
 
