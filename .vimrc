@@ -33,7 +33,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'davidhalter/jedi-vim'
-
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
