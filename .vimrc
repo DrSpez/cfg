@@ -30,6 +30,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 "Plugins
+Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'davidhalter/jedi-vim'
@@ -54,6 +55,16 @@ filetype plugin indent on    " required
 call vundle#end()            " required
 " Put your non-Plugin stuff after this line   
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
 
 "PEP-8 indentation   
 setlocal softtabstop=4
@@ -103,6 +114,9 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" PythonJedi
+let g:jedi#show_call_signatures = 2
 
 " EasyMotion binds
 let g:EasyMotion_smartcase = 1
