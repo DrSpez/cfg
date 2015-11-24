@@ -80,6 +80,9 @@ set mouse=a
 set t_Co=256
 colorscheme wombat256mod
 
+" Highlight current line
+set cursorline
+
 " Use system clipboard
 set clipboard=unnamedplus
 
@@ -124,8 +127,9 @@ let g:EasyMotion_smartcase = 1
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
+"set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
+
 
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-bd-tl)
