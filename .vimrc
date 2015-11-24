@@ -121,6 +121,12 @@ let g:jedi#show_call_signatures = 2
 " EasyMotion binds
 let g:EasyMotion_smartcase = 1
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-bd-tl)
 

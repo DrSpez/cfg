@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='scp://wrf@H4//'
+let g:netrw_dirhist_2='scp://wrf@H4//home/'
+let g:netrw_dirhist_3='scp://wrf@H4//home/wrf/'
+let g:netrw_dirhist_4='scp://wrf@H4//home/wrf/machine_learning/'
+let g:netrw_dirhist_5='scp://wrf@H4//home/wrf/'
+let g:netrw_dirhist_6='scp://wrf@H4//home/wrf/machine_learning/'
+let g:netrw_dirhist_7='scp://wrf@H4//home/wrf/libs/'
+let g:netrw_dirhist_8='scp://wrf@H4//home/wrf/machine_learning/new/'
