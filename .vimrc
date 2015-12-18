@@ -86,6 +86,9 @@ set cursorline
 " Use system clipboard
 set clipboard=unnamedplus
 
+" Toggle paste mode with F3
+set pastetoggle=<F3>
+
 " Run Python with F5
 nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 
