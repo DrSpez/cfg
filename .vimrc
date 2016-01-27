@@ -105,6 +105,9 @@ highlight SpecialKey guifg=#4a4a59
 " Map ; to :
 map ; :
 
+" Toggle syntastic:
+map <F5> :SyntasticToggleMode
+
 " Swap lines
 nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
