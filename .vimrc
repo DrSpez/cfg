@@ -83,6 +83,10 @@ colorscheme wombat256mod
 " Highlight current line
 set cursorline
 
+" Highlight 80th column
+set colorcolumn=80
+highlight ColorColumn ctermbg=23
+
 " Use system clipboard
 set clipboard=unnamedplus
 
