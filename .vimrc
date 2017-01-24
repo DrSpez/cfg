@@ -163,9 +163,10 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev) "
 
 " NERDTree
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Toggle nerdtree
+nmap <silent> <C-T> :NERDTreeToggle<CR>
+
 " Fix tree '~V' bug
 let g:NERDTreeDirArrows=0 
 " Hide undesired files
