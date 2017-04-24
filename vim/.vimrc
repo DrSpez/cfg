@@ -33,7 +33,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 
@@ -128,9 +127,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" PythonJedi
-let g:jedi#show_call_signatures = 2
-
 " EasyMotion binds
 let g:EasyMotion_smartcase = 1
 
@@ -158,9 +154,8 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev) "
 
 " NERDTree
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <silent> <C-T> :NERDTreeToggle<CR>
+
 " Fix tree '~V' bug
 let g:NERDTreeDirArrows=0 
 " Hide undesired files
