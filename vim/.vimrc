@@ -77,6 +77,7 @@ filetype indent plugin on
 set number
 set mouse=a
 set t_Co=256
+let $TERM = "xterm-256color"
 colorscheme wombat256mod
 
 " Highlight current line
@@ -162,4 +163,3 @@ let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$']
 
 echo "My .vimrc loaded"
-
