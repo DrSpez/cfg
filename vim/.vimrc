@@ -74,10 +74,13 @@ set tabstop=4 shiftwidth=4 expandtab
 syntax on
 filetype indent plugin on
 
+" Neovim compatibility
+let $LANG = "C" " Set locale to english
+let $TERM = "xterm-256color" " Allow colors
+
 set number
 set mouse=a
 set t_Co=256
-let $TERM = "xterm-256color"
 colorscheme wombat256mod
 
 " Highlight current line
