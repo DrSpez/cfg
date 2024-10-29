@@ -35,6 +35,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -79,6 +80,7 @@ let $LANG = "C" " Set locale to english
 let $TERM = "xterm-256color" " Allow colors
 
 set number
+set relativenumber
 set mouse=a
 set t_Co=256
 colorscheme wombat256mod
