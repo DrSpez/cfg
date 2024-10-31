@@ -30,12 +30,13 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 "Plugins
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/CycleColor'
+Plugin 'sheerun/vim-polyglot'
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -55,17 +56,6 @@ filetype plugin indent on    " required
 call vundle#end()            " required
 " Put your non-Plugin stuff after this line   
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-
 "PEP-8 indentation   
 setlocal softtabstop=4
 setlocal textwidth=80
@@ -83,7 +73,7 @@ set number
 set relativenumber
 set mouse=a
 set t_Co=256
-colorscheme wombat256mod
+colorscheme jellybeans
 
 " Highlight current line
 set cursorline
@@ -113,9 +103,6 @@ highlight SpecialKey guifg=#4a4a59
 
 " Map ; to :
 map ; :
-
-" Toggle syntastic:
-map <F5> :SyntasticToggleMode
 
 " Swap lines
 nnoremap <c-j> :m .+1<CR>==
