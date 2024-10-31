@@ -36,6 +36,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/CycleColor'
+Plugin 'sainnhe/everforest'
 Plugin 'sheerun/vim-polyglot'
 
 filetype plugin indent on    " required
@@ -73,7 +74,7 @@ set number
 set relativenumber
 set mouse=a
 set t_Co=256
-colorscheme jellybeans
+colorscheme everforest
 
 " Highlight current line
 set cursorline
