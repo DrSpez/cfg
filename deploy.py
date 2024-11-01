@@ -17,14 +17,11 @@ for config_dir in CONFIG_DIRS:
             print("[{}] Linked: {} -> {}".format(config_dir, filename, linkname))
 
 # Symlink vim configs to nvim dirs also:
-filename = os.path.join(ROOT_DIR, 'vim', '.vimrc')
-linkname = os.path.join(HOME_DIR, '.config', 'nvim', 'init.vim')
+filename = os.path.join(ROOT_DIR, 'nvim')
+linkname = os.path.join(HOME_DIR, '.config', 'nvim')
 os.symlink(filename, linkname)
 print("[nvim] Linked: {} -> {}".format(filename, linkname))
-filename = os.path.join(ROOT_DIR, 'vim', '.vim', 'colors')
-linkname = os.path.join(HOME_DIR, '.config', 'nvim', 'colors')
-os.symlink(filename, linkname)
-print("[nvim] Linked: {} -> {}".format(filename, linkname))
+
 
 # Clone Vundle
 vundle_path = os.path.join(HOME_DIR, ".vim", "bundle", "Vundle.vim")

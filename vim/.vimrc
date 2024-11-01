@@ -30,13 +30,13 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 "Plugins
-Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/CycleColor'
-Plugin 'sainnhe/everforest'
+Plugin 'scrooloose/nerdtree' "file explorer tree
+Plugin 'Lokaltog/vim-easymotion' "easy motion to any char in the file
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive' "embedded git via :Git <git_command>
+Plugin 'ctrlpvim/ctrlp.vim' "ctrl-p to go to file
+Plugin 'vim-scripts/CycleColor' "F4 to cycle installed themes
+Plugin 'sainnhe/everforest' "color theme
 Plugin 'sheerun/vim-polyglot'
 
 filetype plugin indent on    " required
@@ -129,7 +129,6 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 "set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
-
 
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-bd-tl)
