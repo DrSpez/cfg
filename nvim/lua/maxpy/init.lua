@@ -1,5 +1,5 @@
 require("maxpy.packer")
 require("maxpy.remap")
-require("maxpy.colors")
+require("maxpy.set")
 
-print("loaded maxpy")
+print("-- /nvim/lua/maxpy/init.lua")
