@@ -1,3 +1,5 @@
 .*.sw?
 */.*.sw?
 */.viminfo
+
+nvim/lazy-lock.json
