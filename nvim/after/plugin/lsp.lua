@@ -36,12 +36,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- These are example language servers.
 require('lspconfig').ts_ls.setup({ on_attach = function(client, bufnr)
-	print('attached ts_ls')
+    print('[lspconfig]: attached ts_ls')
 end,
 })
-require('lspconfig').omnisharp.setup({ on_attach = function(client, bufnr)
-	print('attached ts_ls')
-end,
+require('lspconfig').omnisharp.setup({
+    capabilities = capabilities,
+    cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+    enable_import_completion = true,
+    organize_imports_on_format = true,
+    enable_roslyn_analyzers = true,
+    root_dir = function ()
+        return vim.loop.cwd() -- current working directory
+    end,
+    on_attach = function(client, bufnr)
+        print('[lspconfig]: attached omnisharp')
+    end,
 })
 
 local cmp = require('cmp')

@@ -13,6 +13,9 @@ return {
         -- LSP support
         'neovim/nvim-lspconfig',
 
+        -- Auto download LSPs
+        'williamboman/mason.nvim',
+
         -- Autocompletion
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
