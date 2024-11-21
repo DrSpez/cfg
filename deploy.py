@@ -2,7 +2,7 @@ import os
 
 ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 HOME_DIR = os.path.expanduser('~')
-CONFIG_DIRS = ['vim', 'tmux', 'yabai', 'skhd']
+CONFIG_DIRS = ['vim', 'tmux', 'yabai', 'skhd', 'aerospace']
 
 # Create symlinks for config files:
 for config_dir in CONFIG_DIRS:
