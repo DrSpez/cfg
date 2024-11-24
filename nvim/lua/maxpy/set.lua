@@ -1,6 +1,3 @@
--- colorscheme
-vim.cmd.colorscheme('everforest')
-
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
