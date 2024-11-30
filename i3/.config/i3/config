@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Code 10
+# font pango:Fira Code 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -187,10 +187,40 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
 
+
+# run polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# run wallpaper app
 exec_always nitrogen --restore
 
+# run picom compositor to allow for the window opacity
 exec_always picom &
+
+######################
+#       Borders      #
+######################
+
+# turn off title bars
+for_window [class=".*"] title_format " "
+for_window [class=".*"] border pixel 2
+
+#  class                 border background text indicator child_border
+client.focused           #7FBBB3 #7FBBB3 #7FBBB3 #7FBBB3 #7FBBB3 client.focused_inactive  #425047 #425047 #425047 #425047 #425047
+client.unfocused         #425047 #425047 #425047 #425047 #425047
+client.urgent            #425047 #425047 #425047 #425047 #425047
+client.placeholder       #425047 #425047 #425047 #425047 #425047
+
+######################
+# Gaps configuration #
+######################
+gaps inner 6
+gaps vertical -4
+gaps horizontal -2
+# smart_gaps on
+# smart_borders on
+
