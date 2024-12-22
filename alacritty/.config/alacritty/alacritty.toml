@@ -20,3 +20,5 @@ transparent_background_colors = true
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 
+[terminal]
+shell = "zsh"
