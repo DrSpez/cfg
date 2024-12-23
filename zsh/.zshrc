@@ -102,3 +102,5 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias restart-waybar="killall -SIGUSR2 waybar"
+alias set-wallpaper="~/.config/hypr/change_wallpaper.sh"
