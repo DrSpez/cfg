@@ -1,0 +1,8 @@
+theme = Everforest Dark - Hard
+
+window-decoration = false
+
+background-opacity = 0.9
+background-blur-radius = 40
+
+cursor-opacity = 0.8
