@@ -2,7 +2,7 @@
     "position": "top",
     "height": 30,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery", "custom/date", "clock", "custom/power"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/date", "clock", "custom/power"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -43,9 +43,8 @@
         "on-click": "wlogout"
     },
     "clock": {
-        "format": "󰅐 {:%H:%M}",
+        "format": "󰅐 {:%H:%M %Y %b %d}",
             "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "format-alt": "{:%Y-%m-%d}"
     },
     "battery": {
             "states": {
