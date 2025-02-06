@@ -105,3 +105,4 @@ fi
 alias restart-waybar="killall -SIGUSR2 waybar"
 alias set-wallpaper="~/.config/hypr/change_wallpaper.sh"
 alias unreal="~/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor"
+alias syncthing="/opt/syncthing/syncthing"
