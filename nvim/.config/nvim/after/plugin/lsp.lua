@@ -66,6 +66,16 @@ require('lspconfig').omnisharp.setup({
     end,
 })
 
+require('lspconfig').rust_analyzer.setup({
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false;
+            }
+        }
+    }
+})
+
 local cmp = require('cmp')
 
 cmp.setup({
