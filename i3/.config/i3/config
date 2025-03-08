@@ -4,6 +4,9 @@ set $mod Mod1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Font
+font pango:FiraCode, 12
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
@@ -15,7 +18,8 @@ bindsym $mod+Return exec ghostty
 bindsym $mod+q kill
 
 # launcher menu
-bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modi 'drun,run'"
+# bindsym $mod+d exec --no-startup-id "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show combi -combi-modi 'drun,run'"
+bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modi 'drun,run' -show-icons"
 
 # change focus
 bindsym $mod+h focus left
@@ -150,7 +154,7 @@ bar {
 exec_always feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # run picom compositor to allow for the window opacity
-# exec_always picom &
+exec_always picom &
 
 ######################
 #      Borders       #
@@ -169,9 +173,9 @@ client.placeholder       #425047 #425047 #425047 #425047 #425047
 ######################
 # Gaps configuration #
 ######################
-# gaps inner 10
-# gaps vertical -4
-# gaps horizontal -2
+gaps inner 10
+gaps vertical -4
+gaps horizontal -2
 
 # smart_gaps on
 # smart_borders on
