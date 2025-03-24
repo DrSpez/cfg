@@ -12,8 +12,7 @@ lspconfig_defaults.capabilities,
 require('cmp_nvim_lsp').default_capabilities()
 )
 
--- This is where you enable features that only work
--- if there is a language server active in the file
+-- If LSP is attached to a file
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -32,14 +31,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
--- You'll find a list of language servers here:
+-- Full list of language servers:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
--- These are example language servers.
+
+-- Typescript
 require('lspconfig').ts_ls.setup({ on_attach = function(client, bufnr)
     print('[lspconfig]: attached ts_ls')
 end,
 })
 
+-- Python
 require('lspconfig').pylsp.setup{
   settings = {
     pylsp = {
@@ -52,6 +53,7 @@ require('lspconfig').pylsp.setup{
   }
 }
 
+-- C#
 require('lspconfig').omnisharp.setup({
     capabilities = capabilities,
     cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
@@ -66,6 +68,7 @@ require('lspconfig').omnisharp.setup({
     end,
 })
 
+-- Rust
 require('lspconfig').rust_analyzer.setup({
     settings = {
         ['rust-analyzer'] = {
@@ -75,6 +78,10 @@ require('lspconfig').rust_analyzer.setup({
         }
     }
 })
+
+-- LaTeX
+require('lspconfig').texlab.setup({})
+
 
 local cmp = require('cmp')
 
