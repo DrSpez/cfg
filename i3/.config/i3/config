@@ -162,10 +162,11 @@ exec_always picom &
 
 # turn off title bars
 # for_window [class=".*"] title_format " "
-# for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 2
 
 #  class                 border background text indicator child_border
-client.focused           #7FBBB3 #7FBBB3 #7FBBB3 #7FBBB3 #7FBBB3 client.focused_inactive  #425047 #425047 #425047 #425047 #425047
+client.focused           #84C092 #84C092 #84C092 #84C092 #84C092
+client.focused_inactive  #425047 #425047 #425047 #425047 #425047
 client.unfocused         #425047 #425047 #425047 #425047 #425047
 client.urgent            #425047 #425047 #425047 #425047 #425047
 client.placeholder       #425047 #425047 #425047 #425047 #425047
@@ -173,9 +174,10 @@ client.placeholder       #425047 #425047 #425047 #425047 #425047
 ######################
 # Gaps configuration #
 ######################
-gaps inner 10
-gaps vertical -4
-gaps horizontal -2
+gaps inner 12
+gaps outer 2
+#gaps vertical -4
+#gaps horizontal -2
 
 # smart_gaps on
 # smart_borders on
