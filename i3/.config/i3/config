@@ -7,6 +7,10 @@ floating_modifier $mod
 # Font
 font pango:FiraCode, 12
 
+# Keyboard layouts
+exec_always "setxkbmap -layout us,ru"
+exec_always "setxkbmap -option 'grp:ctrl_space_toggle'"
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
