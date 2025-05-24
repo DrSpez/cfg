@@ -18,6 +18,16 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec ghostty
 
+# start file manager
+bindsym $mod+e exec ghostty -e ranger
+
+# take screenshot into clipboard
+# - selection
+bindsym $mod+t exec scrot - -s | xclip -selection clipboard -target image/png
+# - fullscreen
+bindsym $mod+shift+t exec scrot - | xclip -selection clipboard -target image/png
+
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -58,9 +68,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+w layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+slash layout stacking
+bindsym $mod+period layout tabbed
+bindsym $mod+comma layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
