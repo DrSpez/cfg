@@ -15,11 +15,14 @@ exec_always "setxkbmap -option 'grp:ctrl_space_toggle'"
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
+# start terminal
 bindsym $mod+Return exec ghostty
 
 # start file manager
 bindsym $mod+e exec ghostty -e ranger
+
+# start browser
+bindsym $mod+w exec firefox
 
 # take screenshot into clipboard
 # - selection
