@@ -45,7 +45,7 @@ end,
 })
 
 -- Python
-require('lspconfig').jedi_language_server.setup({})
+require('lspconfig').pyright.setup({})
 
 -- C#
 require('lspconfig').omnisharp.setup({
