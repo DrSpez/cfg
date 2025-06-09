@@ -35,6 +35,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Full list of language servers:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
+-- Bash
+require('lspconfig').bashls.setup({})
+
 -- Typescript
 require('lspconfig').ts_ls.setup({ on_attach = function(client, bufnr)
     print('[lspconfig]: attached ts_ls')
@@ -42,17 +45,7 @@ end,
 })
 
 -- Python
-require('lspconfig').pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          maxLineLength = 72
-        }
-      }
-    }
-  }
-}
+require('lspconfig').jedi_language_server.setup({})
 
 -- C#
 require('lspconfig').omnisharp.setup({
