@@ -1,8 +1,7 @@
 map H set hidden!
 map <delete> delete
 
-#set previewer ~/.config/lf/preview.sh
-#set cleaner ~/.config/lf/cleaner.sh
+set previewer ~/.config/lf/preview.sh
 
 set ifs "\n"
 set incsearch true
