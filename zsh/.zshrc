@@ -106,3 +106,9 @@ alias restart-waybar="killall -SIGUSR2 waybar"
 alias set-wallpaper="~/.config/hypr/change_wallpaper.sh"
 alias unreal="~/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor"
 alias syncthing="/opt/syncthing/syncthing"
+
+lfcd () {
+  # `command` is needed in case `lfcd` is aliased to `lf`
+  cd "$(command lf -print-last-dir "$@")"
+}
+alias lf='lfcd'

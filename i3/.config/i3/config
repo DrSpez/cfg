@@ -19,7 +19,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec ghostty
 
 # start file manager
-bindsym $mod+e exec ghostty -e ranger
+bindsym $mod+e exec ghostty -e lf
 
 # start browser
 bindsym $mod+w exec firefox
