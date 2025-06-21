@@ -62,6 +62,9 @@ require('lspconfig').omnisharp.setup({
     end,
 })
 
+-- Go
+require('lspconfig').gopls.setup({})
+
 -- Rust
 require('lspconfig').rust_analyzer.setup({
     settings = {
