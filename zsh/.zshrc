@@ -75,6 +75,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# Vi mode
+set -o vi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

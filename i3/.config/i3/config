@@ -8,8 +8,7 @@ floating_modifier $mod
 font pango:FiraCode, 12
 
 # Keyboard layouts
-exec_always "setxkbmap -layout us,ru"
-exec_always "setxkbmap -option 'grp:ctrl_space_toggle'"
+# Controlled by ~/.xinitrc
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
