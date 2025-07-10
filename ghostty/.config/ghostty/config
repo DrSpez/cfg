@@ -1,4 +1,4 @@
-theme = GruvboxDarkHard
+theme = nord-wave
 
 window-decoration = true
 gtk-titlebar = false

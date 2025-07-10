@@ -34,6 +34,7 @@ return {
     -- color schemes
     'sainnhe/gruvbox-material',
     'sainnhe/everforest',
+    'shaunsingh/nord.nvim',
 
     -- file tree
     {
