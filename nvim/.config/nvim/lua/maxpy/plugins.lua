@@ -29,6 +29,7 @@ return {
     -- git
     'tpope/vim-fugitive',
     'f-person/git-blame.nvim',
+    'mhinz/vim-signify',
 
     -- color schemes
     'sainnhe/gruvbox-material',
