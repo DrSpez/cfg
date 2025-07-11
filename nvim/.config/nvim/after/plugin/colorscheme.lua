@@ -1,1 +1,2 @@
-vim.cmd.colorscheme("nord");
+-- set colorscheme
+vim.cmd.colorscheme(G.colorscheme)
