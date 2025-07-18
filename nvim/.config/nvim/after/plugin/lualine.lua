@@ -1,5 +1,5 @@
-require('lualine').setup({
-    options = {
-        theme = G.colorscheme
-    },
+require("lualine").setup({
+  options = {
+    theme = G.colorscheme,
+  },
 })

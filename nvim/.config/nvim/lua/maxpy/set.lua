@@ -9,4 +9,4 @@ vim.opt.expandtab = true
 
 -- trailing space
 vim.opt.list = true
-vim.opt.listchars = 'tab:▸\\ ,trail:·'
+vim.opt.listchars = "tab:▸\\ ,trail:·"
