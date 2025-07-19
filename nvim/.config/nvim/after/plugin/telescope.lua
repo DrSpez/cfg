@@ -15,7 +15,7 @@ require("telescope").setup({
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>p", function()
-  builtin.find_files({
+  builtin.find_files({ -- NOTE: install 'fd' for faster 'find'
     hidden = true,
   })
 end, { desc = "Fuzzy-find files. Respects .gitignore" })
