@@ -1,6 +1,7 @@
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    go = { "gofmt" },
     javascript = { "biome", "prettier", stop_at_first = true },
     typescript = { "biome", "prettier", stop_at_first = true },
     typescriptreact = { "prettier", "biome", stop_at_first = true },
