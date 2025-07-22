@@ -10,3 +10,7 @@ vim.opt.expandtab = true
 -- trailing space
 vim.opt.list = true
 vim.opt.listchars = "tab:▸\\ ,trail:·"
+
+-- "smart case" search - insensitive, unless contains capital letters
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
