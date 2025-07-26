@@ -1,3 +1,5 @@
+local actions = require("telescope.actions")
+
 require("telescope").setup({
   defaults = {
     file_ignore_patterns = { "node_modules", ".git/" },
@@ -8,6 +10,13 @@ require("telescope").setup({
       "--follow",
     },
     layout_strategy = "horizontal",
+    mappings = {
+      -- normal mode
+      n = {
+        ["<Up>"] = actions.cycle_history_prev,
+        ["<Down>"] = actions.cycle_history_next,
+      },
+    },
   },
 })
 
