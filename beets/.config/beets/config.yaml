@@ -1,0 +1,10 @@
+ui:
+  terminal_width: 80
+plugins:
+  - info
+  - fromfilename
+fromfilename:
+    formats:
+      - '%if{$albumartist,$albumartist,$artist} - %album - %track - %title'
+      - '%track - %title'
+      - '%artist - %title'
