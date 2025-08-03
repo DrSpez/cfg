@@ -1,8 +1,8 @@
 return {
   -- syntax
-  -- 	treesitter
+  -- treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  -- 	lsp-zero and deps
+  -- lsp-zero and deps
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v4.x",
