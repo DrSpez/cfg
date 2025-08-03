@@ -77,6 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # Vi mode
 set -o vi
+bindkey '^R' history-incremental-search-backward # NOTE: re-binding it because vi mode overwrites it
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
