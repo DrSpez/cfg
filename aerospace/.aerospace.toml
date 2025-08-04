@@ -1,11 +1,11 @@
 on-focus-changed = [
-  "exec-and-forget osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\"'",
+  "exec-and-forget curl http://localhost:7776/aerospace/spaces/refresh",
 ]
 
 exec-on-workspace-change = [
   '/bin/zsh',
   '-c',
-  '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""',
+  'curl "http://localhost:7776/aerospace/spaces/refresh?space=$AEROSPACE_FOCUSED_WORKSPACE"',
 ]
 
 # You can use it to add commands that run after login to macOS user session.
