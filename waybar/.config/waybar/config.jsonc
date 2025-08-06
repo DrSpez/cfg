@@ -65,6 +65,9 @@
             "format-disconnected": "󰤮 Disconnected",
             "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+    "tray": {
+        "spacing": 4,
+    },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
             "format-muted": "󰖁 Muted",
