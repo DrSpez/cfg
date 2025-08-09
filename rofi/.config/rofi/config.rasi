@@ -6,9 +6,9 @@ configuration {
 
 * {
   bg: #282828;
-  bgt: #28282895;
+  bgt: #28282899;
   t: transparent;
-  fg: #d4be98;
+  fg: #ECDBBA;
 
   selected-bg: @fg;
   selected-fg: @bg;
@@ -19,7 +19,7 @@ configuration {
 
 window {
   fullscreen: true;
-  padding: 35% 30%;
+  padding: 30% 40%;
   transparency: "real";
   background-color: @bgt;
   border-color: @t;
@@ -115,7 +115,7 @@ button.selected {
 
 textbox-prompt-sep {
     expand:     false;
-    str:        ":";
+    str:        "";
     text-color: @fg;
     margin:     0 0.3em 0 0;
 }
