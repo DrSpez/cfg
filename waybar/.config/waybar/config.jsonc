@@ -1,8 +1,9 @@
 {
     "position": "top",
     "height": 30,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/date", "clock", "custom/power"],
+    "modules-left": ["custom/power", "custom/cmus"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/date", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -19,22 +20,31 @@
             "8": [],
             "9": [],
             "10": []
+        },
+        "format-icons": {
+            "1": "",
+            "2": "󰈹",
+            "3": "",
+            "4": "󰖲",
+            "5": "󰠮",
+            "6": "󱓷",
+            "7": "󱇧",
+            "8": "󰭹",
+            "9": "󰝚",
+            "10": "󰕧"
+        }
     },
-            "format-icons": {
-                    "1": "󰋜",
-                    "2": "󰈹",
-                    "3": "󰠮",
-                    "4": "󰭹",
-                    "5": "󱓷",
-                    "6": "󱇧",
-                    "7": "󰊢",
-                    "8": "󰖲",
-                    "9": "󰝚",
-                    "10": "󰕧"
-         }
-     },
+    "custom/cmus": {
+        "format": " ♪ {}",
+        "max-length": 45,
+        "interval": 10,
+        "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+        "exec-if": "pgrep cmus",
+        "on-click": "cmus-remote -u",                        //toggle pause
+        "escape": true                                       //handle markup entities
+    },
     "custom/date": {
-            "format": "󰸗 {}",
+        "format": "󰸗 {}",
         "interval": 3600,
         "exec": "$HOME/bin/waybar-date.sh"
     },
@@ -44,33 +54,33 @@
     },
     "clock": {
         "format": "󰅐 {:%H:%M %Y %b %d}",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "battery": {
-            "states": {
-                    "warning": 30,
-                    "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-charging": "󰂄 {capacity}%",
-            "format-plugged": "󰂄{capacity}%",
-            "format-alt": "{time} {icon}",
-            "format-full": "󱈑 {capacity}%",
-            "format-icons": ["󱊡", "󱊢", "󱊣"]
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄{capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-full": "󱈑 {capacity}%",
+        "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
     "network": {
-            "format-wifi": "  {essid}",
-            "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-            "format-linked": "{ifname} (No IP) ",
-            "format-disconnected": "󰤮 Disconnected",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤮 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "tray": {
         "spacing": 4,
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-            "format-muted": "󰖁 Muted",
+        "format-muted": "󰖁 Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
