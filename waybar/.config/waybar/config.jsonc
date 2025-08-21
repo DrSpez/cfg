@@ -76,7 +76,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "tray": {
-        "spacing": 4,
+        "spacing": 12,
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",

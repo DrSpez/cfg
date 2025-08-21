@@ -1,5 +1,10 @@
-@define-color background #1E2326;
-@define-color foreground #2E383C;
-@define-color active-item #E69875;
+@define-color background #282828;
+@define-color foreground #A89984;
+@define-color active-item #EBDBB2;
 @define-color bright #D3C6AA;
+@define-color red #9D0006;
+@define-color light-blue #83A597;
+@define-color orange #D65D0E;
+@define-color yellow #D79921;
+@define-color green #98971A;
 

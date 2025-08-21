@@ -1,6 +1,6 @@
 -- Global constants
 G = {
-  colorscheme = "everforest",
+  colorscheme = "gruvbox-material",
 }
 
 require("maxpy")
