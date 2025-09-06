@@ -5,8 +5,13 @@
 
 BAT_THEME="Nord"
 
+file="$1"
+w="$2"
+h="$3"
+x="$4"
+y="$5"
+
 batorcat() {
-    file="$1"
     shift
     if command -v bat >/dev/null 2>&1; then
         bat --color=always --theme="$BAT_THEME" --style=numbers --pager=never "$file" "$@"
@@ -15,9 +20,14 @@ batorcat() {
     fi
 }
 
+draw() {
+  kitten icat --stdin no --transfer-mode memory --place "${w}x${h}@${x}x${y}" "$1" </dev/null >/dev/tty
+  exit 1
+}
+
 case "$(file -Lb --mime-type -- "$1")" in
     image/*)
-        # TODO: implement
+        draw "$file"
         ;;
     application/pdf)
         # TODO: implement
