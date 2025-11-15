@@ -7,3 +7,6 @@ background-opacity = 0.9
 background-blur-radius = 40
 
 cursor-opacity = 0.8
+
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
