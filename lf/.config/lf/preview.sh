@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # requirements:
-# file bat
+# file bat poppler
 
 BAT_THEME="Nord"
 
@@ -30,7 +30,7 @@ case "$(file -Lb --mime-type -- "$1")" in
         draw "$file"
         ;;
     application/pdf)
-        # TODO: implement
+        pdftotext "$file" - | sed -n "1,200p" # requires poppler
         ;;
     text/*|application/json)
         batorcat "$1"
