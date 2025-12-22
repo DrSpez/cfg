@@ -1,7 +1,7 @@
 @import url("./colors.css");
 
 * {
-    font-family: FiraMono;
+    font-family: 'FiraMono', 'Fira Mono';
     font-size: 14px;
     font-weight: bold;
     min-height: 0;
