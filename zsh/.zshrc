@@ -115,3 +115,6 @@ lfcd () {
   cd "$(command lf -print-last-dir "$@")"
 }
 alias lf='lfcd'
+
+alias iphone-mount='idevicepair pair && ifuse ~/mnt/iphone && echo "iPhone mounted at ~/mnt/iphone"'
+alias iphone-unmount='fusermount -uz ~/mnt/iphone && echo "iPhone unmounted"'
