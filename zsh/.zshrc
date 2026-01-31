@@ -84,8 +84,9 @@ bindkey '^R' history-incremental-search-backward # NOTE: re-binding it because v
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
+# If SSH:
 if [[ -n $SSH_CONNECTION ]]; then
+  PROMPT='%F{red}[SSH]%f %n@%m %~ %# '
   export EDITOR='vim'
 else
   export EDITOR='nvim'
