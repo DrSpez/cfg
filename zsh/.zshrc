@@ -1,5 +1,8 @@
 export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
+export NVM_DIR="$HOME/.nvm"
+
+[[ -s /usr/share/nvm/init-nvm.sh ]] && source /usr/share/nvm/init-nvm.sh
 
 plugins=(git)
 ZSH_THEME="robbyrussell"
