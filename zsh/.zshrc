@@ -1,13 +1,20 @@
 export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
-export NVM_DIR="$HOME/.nvm"
 
-[[ -s /usr/share/nvm/init-nvm.sh ]] && source /usr/share/nvm/init-nvm.sh
+# NODE
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    source "$NVM_DIR/nvm.sh"
+    echo "nvm initialized"
+    nvm "$@"
+  else
+    command nvm "$@"
+  fi
+}
 
 plugins=(git)
 ZSH_THEME="robbyrussell"
-ENABLE_CORRECTION="true"
-CASE_SENSITIVE="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,12 +32,16 @@ fi
 ## Aliases
 alias restart-waybar="killall -SIGUSR2 waybar"
 alias set-wallpaper="~/.config/hypr/change_wallpaper.sh"
-alias unreal="~/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor"
-alias syncthing="/opt/syncthing/syncthing"
+alias set-temperature="hyprctl hyprsunset temperature $1"
+
 lfcd () {
   # `command` is needed because `lfcd` is aliased to `lf`
   cd "$(command lf -print-last-dir "$@")"
 }
 alias lf='lfcd'
+
+alias unreal="~/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor"
+alias syncthing="/opt/syncthing/syncthing"
+
 alias iphone-mount='idevicepair pair && ifuse ~/mnt/iphone && echo "iPhone mounted at ~/mnt/iphone"'
 alias iphone-unmount='fusermount -uz ~/mnt/iphone && echo "iPhone unmounted"'
