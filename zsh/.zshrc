@@ -32,7 +32,14 @@ fi
 ## Aliases
 alias restart-waybar="killall -SIGUSR2 waybar"
 alias set-wallpaper="~/.config/hypr/change_wallpaper.sh"
-alias set-temperature="hyprctl hyprsunset temperature $1"
+set-temperature() {
+    hyprctl hyprsunset temperature $1
+}
+#### make sprite sheet from an animated image.
+#### example usage: spritesheet-from-animation animation.png 4x1 spritesheet.png
+spritesheet-from-animation() {
+    ffmpeg -i "$1" -vf "tile=$2" "$3"
+}
 
 lfcd () {
   # `command` is needed because `lfcd` is aliased to `lf`
