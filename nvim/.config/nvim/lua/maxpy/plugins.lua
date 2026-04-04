@@ -1,25 +1,21 @@
 return {
   -- syntax
-  -- treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  -- lsp-zero and deps
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v4.x",
     dependencies = {
       -- LSP support
       "neovim/nvim-lspconfig",
-
       -- Auto download LSPs
       "williamboman/mason.nvim",
-
       -- Autocompletion
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
     },
   },
 
-  -- format
+  -- formatting
   {
     "stevearc/conform.nvim",
     opts = {},

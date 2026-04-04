@@ -37,41 +37,12 @@ lspconfig.bashls.setup({})
 
 -- Typescript
 lspconfig.ts_ls.setup({
+  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   on_attach = function(client, bufnr)
-    -- don't format - biome is set up for formatting
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-    if client.name == "ts_ls" then
-      client.server_capabilities.codeActionProvider = {
-        codeActionKinds = { "quickfix", "refactor" },
-      }
-    end
-  end,
-})
-lspconfig.biome.setup({
-  -- Add this on_attach function
-  on_attach = function(client, bufnr)
-    -- This disables LSP formatting capabilities only for the biome server
+    -- don't format - conform plugin is configured to use biome for formatting
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end,
-
-  -- This is your existing command to find the local executable
-  cmd = (function()
-    local executable = vim.fs.find({ "node_modules/.bin/biome" }, {
-      upward = true,
-      limit = 1,
-      type = "file",
-      path = vim.api.nvim_buf_get_name(0),
-    })[1]
-    return { executable or "biome", "lsp-proxy" }
-  end)(),
-
-  settings = {
-    ["biome"] = {
-      ["require_cwd"] = true,
-    },
-  },
 })
 
 -- Python
