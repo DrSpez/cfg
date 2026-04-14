@@ -1,19 +1,40 @@
 return {
   -- syntax
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v4.x",
-    dependencies = {
-      -- LSP support
-      "neovim/nvim-lspconfig",
-      -- Auto download LSPs
-      "williamboman/mason.nvim",
-      -- Autocompletion
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp",
-    },
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").setup({
+        highlight = { enable = true },
+      })
+
+      require("nvim-treesitter").install({
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
+        "css",
+        "lua",
+        "python",
+        "c",
+        "c_sharp",
+        "json",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+      })
+    end,
   },
+  -- LSP support
+  { "neovim/nvim-lspconfig" },
+  -- Auto download LSPs
+  { "mason-org/mason.nvim" },
+  -- Autocompletion
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
 
   -- formatting
   {
@@ -24,8 +45,12 @@ return {
   -- file search
   {
     "nvim-telescope/telescope.nvim",
-    version = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      -- optional but recommended
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
   },
   {
     "ThePrimeagen/harpoon",
