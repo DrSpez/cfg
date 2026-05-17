@@ -46,22 +46,23 @@ return {
             name = "Ollama",
             end_point = os.getenv("OPEN_WEBUI_BASE_URL") .. "/api/v1/chat/completions",
             model = "qwen2.5-coder:7b",
+            stream = true,
             optional = {
               max_tokens = 56,
               top_p = 0.9,
+              chat_id = "neovim-completion-session-uuid-12345", -- NOTE: mock chat id
             },
           },
         },
         virtualtext = {
           enable = true,
-          -- Add filetypes where you want the ghost text to appear automatically
-          auto_trigger_ft = { "lua", "python", "javascript", "go" },
+          auto_trigger_ft = { "lua", "python", "javascript", "typescript", "go" },
           keymap = {
-            accept = "<A-A>", -- Alt + Shift + a to accept
-            accept_line = "<A-l>", -- Alt + l to accept single line
-            next = "<A-]>",
-            prev = "<A-[>",
-            dismiss = "<A-e>",
+            accept = "<C-CR>", -- Control + Enter (Accept entire ghost text)
+            accept_line = "<C-Right>", -- Control + Right Arrow (Accept single line)
+            next = "<C-Down>", -- Control + Down Arrow (Cycle to next suggestion)
+            prev = "<C-Up>", -- Control + Up Arrow (Cycle to previous suggestion)
+            dismiss = "<C-Left>", -- Control + Left Arrow (Clear suggestion)
           },
         },
       })

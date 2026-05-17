@@ -1,5 +1,6 @@
 export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
+source "$HOME/cfg/secrets.env"
 
 # NODE
 export NVM_DIR="$HOME/.nvm"
