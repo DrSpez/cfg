@@ -33,6 +33,40 @@ return {
   -- Auto download LSPs
   { "mason-org/mason.nvim" },
   -- Autocompletion
+  {
+    "milanglacier/minuet-ai.nvim",
+    config = function()
+      require("minuet").setup({
+        provider = "openai_compatible",
+        n_completions = 1,
+        context_window = 512,
+        provider_options = {
+          openai_compatible = {
+            api_key = "OPEN_WEBUI_API_KEY",
+            name = "Ollama",
+            end_point = os.getenv("OPEN_WEBUI_BASE_URL") .. "/api/v1/chat/completions",
+            model = "qwen2.5-coder:7b",
+            optional = {
+              max_tokens = 56,
+              top_p = 0.9,
+            },
+          },
+        },
+        virtualtext = {
+          enable = true,
+          -- Add filetypes where you want the ghost text to appear automatically
+          auto_trigger_ft = { "lua", "python", "javascript", "go" },
+          keymap = {
+            accept = "<A-A>", -- Alt + Shift + a to accept
+            accept_line = "<A-l>", -- Alt + l to accept single line
+            next = "<A-]>",
+            prev = "<A-[>",
+            dismiss = "<A-e>",
+          },
+        },
+      })
+    end,
+  },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
 
