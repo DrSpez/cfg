@@ -56,13 +56,14 @@ return {
         },
         virtualtext = {
           enable = true,
+          show_on_completion_menu = true,
           auto_trigger_ft = { "lua", "python", "javascript", "typescript", "go" },
           keymap = {
-            accept = "<C-CR>", -- Control + Enter (Accept entire ghost text)
-            accept_line = "<C-Right>", -- Control + Right Arrow (Accept single line)
-            next = "<C-Down>", -- Control + Down Arrow (Cycle to next suggestion)
-            prev = "<C-Up>", -- Control + Up Arrow (Cycle to previous suggestion)
-            dismiss = "<C-Left>", -- Control + Left Arrow (Clear suggestion)
+            accept = "<C-f>",
+            accept_line = "<C-g>",
+            next = "<C-Right>",
+            prev = "<C-Left>",
+            dismiss = "<C-d>",
           },
         },
       })

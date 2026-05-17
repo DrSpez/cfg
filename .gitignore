@@ -3,4 +3,4 @@
 */.viminfo
 
 nvim/lazy-lock.json
-secrets.env
+.env
