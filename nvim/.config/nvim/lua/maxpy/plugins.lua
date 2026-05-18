@@ -47,6 +47,17 @@ return {
             end_point = os.getenv("OPEN_WEBUI_BASE_URL") .. "/api/v1/chat/completions",
             model = "qwen2.5-coder:7b",
             stream = true,
+            system = {
+              prompt = [[
+                You are an AI code completion engine.
+                Provide contextually appropriate completions based on the context before and after the cursor position.
+
+                CRITICAL GUIDELINES:
+                1. Offer completions starting exactly AFTER the characters the user has already typed.
+                2. DO NOT repeat or echo any characters/words present immediately before the <cursorPosition> marker. For example, if the user typed "print('Hello wo", your response must start with "rld!')", NOT "print('Hello world!')".
+                3. Return the result directly without markdown code fences or conversational text.
+              ]],
+            },
             optional = {
               max_tokens = 56,
               top_p = 0.9,
