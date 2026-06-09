@@ -1,22 +1,31 @@
 @import url("./colors.css");
 
 * {
-    font-family: 'FiraMono', 'Fira Mono';
-    font-size: 14px;
+    font-family: 'FiraMono', 'Fira Mono', monospace;
+    font-size: 15px;
     font-weight: bold;
-    min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background: transparent;
+    background-color: transparent;
 }
 
-#custom-power, #custom-cmus, #workspaces, #custom-date, #clock, #battery, #pulseaudio, #network, #tray {
-    margin: 10px 4px 4px 8px;
+#workspaces,
+#custom-power,
+#custom-cmus,
+#custom-date,
+#clock,
+#backlight,
+#battery,
+#pulseaudio,
+#network,
+#tray {
+    margin: 6px 4px;
+    padding: 2px 12px;
     background-color: @background;
-    padding: 0 12px;
-    border-radius: 10px;
-    box-shadow: none;
+    border-radius: 8px;
     box-shadow: 0px 2px 2px @background, inset 0 1px 2px @foreground;
 }
 
@@ -24,9 +33,10 @@ window#waybar {
     color: @bright;
     background-color: @red;
     box-shadow: 0px 2px 2px @red, inset 0 2px 2px @bright;
-    border-radius: 50%;
-    padding: 0 15px;
+    border-radius: 999px;
+    padding: 0 12px;
 }
+
 #custom-power:hover {
     background-color: @orange;
     box-shadow: 0px 2px 2px @foreground, inset 0 2px 2px @bright;
@@ -37,18 +47,23 @@ window#waybar {
 }
 
 #workspaces {
-    padding: 4px;
+    padding: 0px 4px;
 }
+
 #workspaces button {
     color: @bright;
-    background-color: @background;
-    margin: 0 2px;
+    background-color: transparent;
+    padding: 2px 8px;
+    margin: 3px 2px;
+    border-radius: 6px;
 }
-#workspaces button.active, button.focused {
+
+#workspaces button.active,
+#workspaces button.focused {
     color: @background;
     background-color: @active-item;
-    box-shadow: 0px 2px 2px @background, inset 0 2px 2px @bright;
 }
+
 #workspaces button:hover {
     color: @background;
     background-color: @bright;
@@ -56,7 +71,6 @@ window#waybar {
 
 #tray {
     color: @bright;
-    background-color: @background;
 }
 
 #pulseaudio {
@@ -69,27 +83,24 @@ window#waybar {
 
 #clock {
     color: @yellow;
-    margin-right: 10px;
-}
-
-/* unused */
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
 }
 
 #custom-date {
     color: #8fbcbb;
 }
 
+#backlight {
+    color: @yellow;
+}
+
 #battery {
     color: #a3be8c;
 }
+
 #battery.charging {
     color: #a3be8c;
 }
+
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -98,4 +109,11 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
 }

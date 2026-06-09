@@ -1,9 +1,13 @@
 {
     "position": "top",
     "height": 30,
+    "margin-top": 6,
+    "margin-botton": 6,
+    "margin-left": 4,
+    "margin-right": 4,
     "modules-left": ["custom/power", "custom/cmus"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/date", "clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "backlight", "battery", "custom/date", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -91,5 +95,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
     }
 }
