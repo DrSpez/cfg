@@ -5,13 +5,13 @@ source "$HOME/cfg/.env"
 # NODE
 export NVM_DIR="$HOME/.nvm"
 nvm() {
-  if [ -s "$NVM_DIR/nvm.sh" ]; then
-    source "$NVM_DIR/nvm.sh"
-    echo "nvm initialized"
-    nvm "$@"
-  else
-    command nvm "$@"
-  fi
+    if [ -s "$NVM_DIR/nvm.sh" ]; then
+        source "$NVM_DIR/nvm.sh"
+        echo "nvm initialized"
+        nvm "$@"
+    else
+        command nvm "$@"
+    fi
 }
 
 plugins=(git)
@@ -25,10 +25,10 @@ set -o vi
 bindkey '^R' history-incremental-search-backward # NOTE: re-binding it because vi mode overwrites it
 ## if SSH:
 if [[ -n $SSH_CONNECTION ]]; then
-  PROMPT='%F{red}[SSH]%f %n@%m %~ %# '
-  export EDITOR='vim'
+    PROMPT='%F{red}[SSH]%f %n@%m %~ %# '
+    export EDITOR='vim'
 else
-  export EDITOR='nvim'
+    export EDITOR='nvim'
 fi
 ## Aliases
 alias restart-waybar="killall -SIGUSR2 waybar"
@@ -43,8 +43,8 @@ spritesheet-from-animation() {
 }
 
 lfcd () {
-  # `command` is needed because `lfcd` is aliased to `lf`
-  cd "$(command lf -print-last-dir "$@")"
+    # `command` is needed because `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
 }
 alias lf='lfcd'
 
@@ -53,3 +53,7 @@ alias syncthing="/opt/syncthing/syncthing"
 
 alias iphone-mount='idevicepair pair && ifuse ~/mnt/iphone && echo "iPhone mounted at ~/mnt/iphone"'
 alias iphone-unmount='fusermount -uz ~/mnt/iphone && echo "iPhone unmounted"'
+
+hypr-run() {
+    hyprctl dispatch "hl.dsp.exec_cmd('$@')"
+}
