@@ -57,3 +57,15 @@ alias iphone-unmount='fusermount -uz ~/mnt/iphone && echo "iPhone unmounted"'
 hypr-run() {
     hyprctl dispatch "hl.dsp.exec_cmd('$@')"
 }
+
+tmux-init() {
+    # create monitor session
+    tmux new -d -s monitor -c ~/
+    tmux send-keys -t monitor 'htop' Enter
+    tmux split-window -v -t monitor
+    tmux send-keys -t monitor 'nvtop' Enter
+
+    # create cfg session
+    tmux new -d -s cfg -c ~/cfg
+    tmux send-keys -t cfg 'nvim ./' Enter
+}
