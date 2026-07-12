@@ -1,8 +1,20 @@
-export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
 source "$HOME/cfg/.env"
 
-# NODE
+# bun
+export BUN_INSTALL="$HOME/.bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# ---------------------------------------------------------------------
+# Path Configuration
+# ---------------------------------------------------------------------
+typeset -U path PATH # typeset -U enforces unique entries in PATH
+[[ -d "$HOME/.cargo/bin" ]] && path+=("$HOME/.cargo/bin")
+[[ -d "$HOME/.local/bin" ]] && path+=("$HOME/.local/bin")
+[[ -d "$BUN_INSTALL/bin" ]] && path+=("$BUN_INSTALL/bin")
+export PATH
+
+# node
 export NVM_DIR="$HOME/.nvm"
 nvm() {
     if [ -s "$NVM_DIR/nvm.sh" ]; then
@@ -69,3 +81,4 @@ tmux-init() {
     tmux new -d -s cfg -c ~/cfg
     tmux send-keys -t cfg 'nvim ./' Enter
 }
+
