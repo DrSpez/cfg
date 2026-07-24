@@ -68,7 +68,7 @@ return {
         virtualtext = {
           enable = true,
           show_on_completion_menu = true,
-          auto_trigger_ft = { "lua", "python", "javascript", "typescript", "go" },
+          auto_trigger_ft = { "lua", "python", "javascript", "typescript", "typescriptreact", "go" },
           keymap = {
             accept = "<C-f>",
             accept_line = "<C-g>",
