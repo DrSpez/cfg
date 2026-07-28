@@ -5,7 +5,7 @@
     "margin-botton": 6,
     "margin-left": 4,
     "margin-right": 4,
-    "modules-left": ["custom/power", "custom/cmus"],
+    "modules-left": ["custom/power", "custom/cmus", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "backlight", "battery", "custom/date", "clock"],
     // Modules configuration
@@ -46,6 +46,17 @@
         "exec-if": "pgrep cmus",
         "on-click": "cmus-remote -u",                        //toggle pause
         "escape": true                                       //handle markup entities
+    },
+    "custom/spotify": {
+        "format": "  {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/watch-spotify-metadata.sh",
+        "exec-if": "pgrep spotify",
+        "on-click": "playerctl --player=spotify play-pause",
+        "on-scroll-up": "playerctl --player=spotify next",
+        "on-scroll-down": "playerctl --player=spotify previous",
+        "max-length": 40,
+        "escape": true
     },
     "custom/date": {
         "format": "󰸗 {}",
