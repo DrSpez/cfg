@@ -6,3 +6,5 @@ set cleaner ~/.config/lf/clean.sh
 
 set ifs "\n"
 set incsearch true
+set info size:time
+set dircounts true
