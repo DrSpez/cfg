@@ -63,8 +63,8 @@ alias lf='lfcd'
 alias unreal="~/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor"
 alias syncthing="/opt/syncthing/syncthing"
 
-alias iphone-mount='idevicepair pair && ifuse ~/mnt/iphone && echo "iPhone mounted at ~/mnt/iphone"'
-alias iphone-unmount='fusermount -uz ~/mnt/iphone && echo "iPhone unmounted"'
+alias iphone-mount='idevicepair pair && ifuse /mnt/iphone && echo "iPhone mounted at /mnt/iphone"'
+alias iphone-unmount='fusermount -uz /mnt/iphone && echo "iPhone unmounted"'
 
 hypr-run() {
     hyprctl dispatch "hl.dsp.exec_cmd('$@')"
