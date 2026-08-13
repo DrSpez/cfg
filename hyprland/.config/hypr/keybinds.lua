@@ -6,7 +6,7 @@ local subMod = "WIN"
 local terminal = "ghostty"
 local menu =
   "pgrep -x rofi >/dev/null 2>&1 && killall rofi || rofi -show combi -combi-modi 'drun,run' -show-icons -display-combi \">\" -combi-display-format '{mode}: {text}'" -- NOTE: requires rofi-wayland; toggles
-local browser = "firefox"
+local browser = "librewolf"
 local fileManager = "ghostty -e lf"
 local lockScreen = "hyprlock"
 local screenshotSection = 'grim -g "$(slurp)" - | wl-copy'
